@@ -1,6 +1,8 @@
 import './App.css';
 import Nav from './nav';
 import HeroSection from './heroSection';
+import React from 'react';
+import OrderDelivery from './orderDelivery';
 
 function App() {
 
@@ -8,6 +10,7 @@ function App() {
     <div>
       <Nav />
       <HeroSection />
+      <OrderDelivery />
     </div>
   );
 }
