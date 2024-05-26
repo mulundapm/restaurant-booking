@@ -12,19 +12,19 @@ function ConfirmationPage() {
         <h5>Table reserved for userName</h5>
         <div className="res-info">
           <div className="row">
-            <label htmlFor="res-date">Date:</label>
-            <p id='res-date'>03/12/2024</p>
+            <h6>Date:</h6>
+            <p id='date'>03/12/2024</p>
           </div>
           <div className="row">
-            <label htmlFor="res-time">Time:</label>
-            <p id='res-date'>20:00</p>
+            <h6>Time:</h6>
+            <p id='time'>20:00</p>
           </div>
           <div className="row">
-            <label htmlFor="res-visitor">Visitors:</label>
-            <p id='res-date'>8</p>
+            <h6>Visitors:</h6>
+            <p id='visitor'>8</p>
           </div>
           <div className="row">
-            <label htmlFor="occasion">Occasion:</label>
+            <h6>Occasion:</h6>
             <p id='occasion'>Birthday</p>
           </div>
         </div>
