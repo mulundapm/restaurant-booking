@@ -189,7 +189,8 @@ form{
 
 .booking > img{
     width: 100vw;
-
+    max-height: 500px;
+    object-fit: cover;
 }
 
 .booking > h1, .confirmation > h1{
