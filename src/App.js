@@ -1,18 +1,37 @@
 import './App.css';
-import Nav from './nav';
-import HeroSection from './heroSection';
 import React from 'react';
-import OrderDelivery from './orderDelivery';
+import { InputProvider } from './context/InputContext';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import BookingPage from './pages/BookingPage';
+import ConfirmationPage from './pages/ConfirmationPage';
+import HomePage from './pages/HomePage';
 
 function App() {
 
   return (
-    <div>
-      <Nav />
-      <HeroSection />
-      <OrderDelivery />
-    </div>
+    <Router>
+        <InputProvider>
+          <Routes>
+            <Route path="/" element={<HomePage />}/>
+            <Route path="/booking" element={<BookingPage />}/>
+            <Route path="/confirmation" element={<ConfirmationPage />}/>
+          </Routes>
+        </InputProvider>
+    </Router>
   );
 }
 
 export default App;
+
+
+/* <Route path="/">
+<Nav />
+<HeroSection />
+<OrderDelivery />
+</Route>
+<Route path="/booking">
+  <BookingPage />
+</Route>
+<Route path="/confirmation">
+  <ConfirmationPage />
+</Route> */

@@ -1,17 +1,12 @@
-import React, { createContext , useState} from 'react'
+import React, { createContext , useContext, useState} from 'react'
 import MainLayout from '../Layout/MainLayout'
 import restaurantImage from '../asset/row-of-serviced-tables-row-in-a-cafe-terrace-2023-11-27-05-24-53-utc.jpeg'
 import { useNavigate } from 'react-router-dom';
+import { InputContext } from '../context/InputContext';
 
 function BookingPage() {
-
-  const[inputs, setInputs] = useState({
-    date: "",
-    time: "",
-    visitors: "",
-    occasion: "",
-    name: ""
-  })
+const {inputs, setInputs}= useContext(InputContext)
+const navigate = useNavigate();
 
   const handleChange = (e) => {
   const name = e.target.name;
@@ -19,12 +14,11 @@ function BookingPage() {
   setInputs(values => ({...values, [name]: value}))
 }
 
-const navigate = useNavigate();
 
   const handleSubmit=(e) =>{
     e.preventDefault();
     console.log(JSON.stringify(inputs));
-    navigate('/confirmation', {state: inputs});
+    navigate('/confirmation');
   }
 
   return (
@@ -102,4 +96,3 @@ const navigate = useNavigate();
 }
 
 export default BookingPage
-export const InputContext = createContext({})

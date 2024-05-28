@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
 import MainLayout from '../Layout/MainLayout'
 import check from '../asset/Solid check.svg'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { InputContext } from '../context/InputContext'
 
 function ConfirmationPage() {
-  const location = useLocation();
-  const inputs = location.state;
+  const {inputs} = useContext(InputContext)
   return (
     <MainLayout>
       <div className="confirmation">
