@@ -24,14 +24,3 @@ function App() {
 export default App;
 
 
-/* <Route path="/">
-<Nav />
-<HeroSection />
-<OrderDelivery />
-</Route>
-<Route path="/booking">
-  <BookingPage />
-</Route>
-<Route path="/confirmation">
-  <ConfirmationPage />
-</Route> */
