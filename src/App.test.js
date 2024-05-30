@@ -6,7 +6,7 @@ import React from 'react';
 
 test("Able to submit booking when all fields has been filled", ()=> {
   const inputs = {
-    date: "26-12-1996",
+    date: "1996-12-26",
     time: "20:30",
     visitors: "2",
     occasion: "birthday",
@@ -21,7 +21,11 @@ test("Able to submit booking when all fields has been filled", ()=> {
     </BrowserRouter>
   )
 
-  fireEvent.change(screen.getByLabelText("Date"), {target:{value: inputs.date}})
+  fireEvent.change(screen.getByLabelText(/Date/), {target:{value: inputs.date}})
+  fireEvent.change(screen.getByLabelText(/Time/), {target:{value: inputs.time}})
+  fireEvent.change(screen.getByLabelText(/Visitors/), {target:{value: inputs.visitors}})
+  fireEvent.change(screen.getByLabelText(/Occasion/), {target:{value: inputs.occasion}})
+  fireEvent.change(screen.getByLabelText(/Name/), {target:{value: inputs.name}})
 
   fireEvent.click(screen.getByRole("button"));
 

@@ -65,7 +65,7 @@ const navigate = useNavigate();
                   autoComplete="off"/>
               </div>
               <div className="row">
-                <label name="occasion">Occasion</label>
+                <label htmlFor="occasion">Occasion</label>
                 <select
                   name="occasion"
                   value={inputs.occasion}
