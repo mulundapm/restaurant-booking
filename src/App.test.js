@@ -29,6 +29,7 @@ test("Able to submit booking when all fields has been filled", ()=> {
 
   fireEvent.click(screen.getByRole("button"));
 
+
   expect(handleSubmit).toHaveBeenCalledWith(inputs)
 })
 

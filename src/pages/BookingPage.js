@@ -4,7 +4,8 @@ import restaurantImage from '../asset/row-of-serviced-tables-row-in-a-cafe-terra
 import { useNavigate } from 'react-router-dom';
 import { InputContext } from '../context/InputContext';
 
-function BookingPage() {
+
+function BookingPage({onSubmit}) {
 const {inputs, setInputs}= useContext(InputContext)
 const navigate = useNavigate();
 
@@ -17,6 +18,11 @@ const navigate = useNavigate();
 
   const handleSubmit=(e) =>{
     e.preventDefault();
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
+    if (onSubmit) {
+      onSubmit(data);
+    }
     console.log(JSON.stringify(inputs));
     navigate('/confirmation');
   }
