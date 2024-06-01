@@ -5,7 +5,7 @@ export const InputContext = createContext()
 
 export const InputProvider = ({children}) =>{
     const[inputs, setInputs] = useState({
-        date: "",
+        date: (new Date()).toLocaleDateString("en-CA"),
         time: "",
         visitors: "",
         occasion: "",

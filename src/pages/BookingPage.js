@@ -3,7 +3,7 @@ import MainLayout from '../Layout/MainLayout'
 import restaurantImage from '../asset/row-of-serviced-tables-row-in-a-cafe-terrace-2023-11-27-05-24-53-utc.jpeg'
 import { useNavigate } from 'react-router-dom';
 import { InputContext } from '../context/InputContext';
-import { fetchAPI } from '../api';
+import { fetchAPI , submitAPI} from '../api';
 
 
 function BookingPage({onSubmit}) {
@@ -23,7 +23,6 @@ const [availableTimes, setAvailableTimes] = useState([]);
     const data = Object.fromEntries(formData.entries());
     if (onSubmit) {
       onSubmit(data);
-      
     }
     console.log(JSON.stringify(inputs));
     navigate('/confirmation');
@@ -51,7 +50,8 @@ const [availableTimes, setAvailableTimes] = useState([]);
                   name="date"
                   id="date"
                   value={inputs.date||""}
-                  onChange={handleChange}/>
+                  onChange={handleChange}
+                  required/>
               </div>
               <div className="row">
                 <label htmlFor="time">Time</label>
@@ -60,7 +60,9 @@ const [availableTimes, setAvailableTimes] = useState([]);
                   value={inputs.time}
                   id="time"
                   onChange={handleChange}
-                  autoComplete="off">
+                  autoComplete="off"
+                  required>
+                <option hidden>Select</option>
                 {availableTimes.map(time => (
                 <option key={time} value={time}>{time}</option>
                 ))}
@@ -74,7 +76,9 @@ const [availableTimes, setAvailableTimes] = useState([]);
                   id="visitors"
                   value={inputs.visitors}
                   onChange={handleChange}
-                  autoComplete="off"/>
+                  autoComplete="off"
+                  required
+                  min={1}/>
               </div>
               <div className="row">
                 <label htmlFor="occasion">Occasion</label>
@@ -97,7 +101,8 @@ const [availableTimes, setAvailableTimes] = useState([]);
                   value={inputs.name}
                   id="name"
                   onChange={handleChange}
-                  autoComplete="off"/>
+                  autoComplete="off"
+                  required/>
               </div>
               <button type='submit' className='primaryButton' > Reserve a table</button>
             </form>
