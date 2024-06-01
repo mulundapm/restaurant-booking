@@ -1,13 +1,15 @@
-import React, { useContext} from 'react'
+import React, { useContext, useState, useEffect} from 'react'
 import MainLayout from '../Layout/MainLayout'
 import restaurantImage from '../asset/row-of-serviced-tables-row-in-a-cafe-terrace-2023-11-27-05-24-53-utc.jpeg'
 import { useNavigate } from 'react-router-dom';
 import { InputContext } from '../context/InputContext';
+import { fetchAPI } from '../api';
 
 
 function BookingPage({onSubmit}) {
 const {inputs, setInputs}= useContext(InputContext)
 const navigate = useNavigate();
+const [availableTimes, setAvailableTimes] = useState([]);
 
   const handleChange = (e) => {
   const name = e.target.name;
@@ -15,17 +17,25 @@ const navigate = useNavigate();
   setInputs(values => ({...values, [name]: value}))
 }
 
-
   const handleSubmit=(e) =>{
     e.preventDefault();
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
     if (onSubmit) {
       onSubmit(data);
+      
     }
     console.log(JSON.stringify(inputs));
     navigate('/confirmation');
   }
+
+  useEffect(() => {
+    if (inputs.date) {
+      const date = new Date(inputs.date);
+      const times = fetchAPI(date);
+      setAvailableTimes(times);
+    }
+  }, [inputs.date]);
 
   return (
     <MainLayout>
@@ -51,13 +61,9 @@ const navigate = useNavigate();
                   id="time"
                   onChange={handleChange}
                   autoComplete="off">
-                  <option value="" disabled hidden>Select</option>
-                  <option value="19:00">19:00</option>
-                  <option value="19:30">19:30</option>
-                  <option value="20:00">20:00</option>
-                  <option value="20:30">20:30</option>
-                  <option value="21:00">21:00</option>
-                  <option value="21:30">21:30</option>
+                {availableTimes.map(time => (
+                <option key={time} value={time}>{time}</option>
+                ))}
                 </select>
               </div>
               <div className="row">
