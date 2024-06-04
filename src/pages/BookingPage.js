@@ -3,7 +3,7 @@ import MainLayout from '../Layout/MainLayout'
 import restaurantImage from '../asset/row-of-serviced-tables-row-in-a-cafe-terrace-2023-11-27-05-24-53-utc.jpeg'
 import { useNavigate } from 'react-router-dom';
 import { InputContext } from '../context/InputContext';
-import { fetchAPI , submitAPI} from '../api';
+import { fetchAPI} from '../availableTime';
 
 
 function BookingPage({onSubmit}) {

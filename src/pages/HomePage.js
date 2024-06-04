@@ -1,7 +1,7 @@
 import React from 'react'
 import MainLayout from '../Layout/MainLayout'
-import HeroSection from '../heroSection'
-import OrderDelivery from '../orderDelivery'
+import HeroSection from '../component/heroSection'
+import OrderDelivery from '../component/orderDelivery'
 
 
 
