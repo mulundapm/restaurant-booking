@@ -112,6 +112,11 @@ em{
     display: inline-block;
 }
 
+.pill:hover{
+    background-color: #495E57;
+    color: #EDEFEE;
+}
+
 hr{
     color: #333333;
     opacity: 0.25;

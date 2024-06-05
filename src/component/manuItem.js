@@ -1,3 +1,38 @@
+import GreekSalad from '../asset/food image/Greek Salad.jpeg'
+import Brushetta from '../asset/food image/Brushetta.jpg'
+import GrillFish from '../asset/food image/Grill Fish.jpg'
+import ModernHummusTrio from '../asset/food image/Modern Hummus Trio.jpeg'
+import BabaGanoush from '../asset/food image/Baba Ganoush.jpg'
+import StuffedGrapeLeaves from '../asset/food image/Stuffed Grape Leaves.jpeg'
+import image07 from '../asset/food image/Falafel Bites.jpg'
+import image08 from '../asset/food image/Zaatar Spiced Chicken.jpg'
+import image09 from '../asset/food image/Mediterranean Quinoa Salad.jpeg'
+import image10 from '../asset/food image/Chicken Shawarma Wrap.jpg'
+import image11 from '../asset/food image/Lamb Gyro.jpeg'
+import image12 from '../asset/food image/Grilled Veggie Wrap.jpg'
+import image13 from '../asset/food image/Spanakopita.jpg'
+import image14 from '../asset/food image/Lamb Kofta.jpeg'
+import image15 from '../asset/food image/Seafood Paella.jpg'
+import image16 from '../asset/food image/Moussaka.jpg'
+import image17 from '../asset/food image/Vegetarian Moussaka.jpg'
+import image18 from '../asset/food image/Grilled Octopus.jpg'
+import image19 from '../asset/food image/Shakshuka.jpg'
+import image20 from '../asset/food image/Chicken Souvlaki.jpg'
+import image21 from '../asset/food image/Beef Kebab.jpeg'
+import image22 from '../asset/food image/Baklava.jpeg'
+import image23 from '../asset/food image/Knafeh.jpeg'
+import image24 from '../asset/food image/Turkish Delight.jpeg'
+import image25 from '../asset/food image/Greek Yogurt with Honey and Walnuts.jpeg'
+import image26 from '../asset/food image/Mint Lemonade.jpeg'
+import image27 from '../asset/food image/Turkish Coffee.jpeg'
+import image28 from '../asset/food image/Moroccan Mint Tea.jpeg'
+import image29 from '../asset/food image/Pomegranate Iced Tea.jpeg'
+import image30 from '../asset/food image/Grilled Halloumi.jpeg'
+import image31 from '../asset/food image/Mediterranean Platter.jpeg'
+import image32 from '../asset/food image/Shrimp Saganaki.jpeg'
+import image33 from '../asset/food image/Roasted Red Pepper and Walnut Dip.jpeg'
+
+
 export const menuItem = [
     {
     id:1,
@@ -5,7 +40,7 @@ export const menuItem = [
     description:"The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.",
     price:12.99,
     category:"salads",
-    image: "../asset/easy_caesar_salad_64317_16x9.jpg"
+    img: GreekSalad
     },
     {
     id:2,
@@ -13,7 +48,7 @@ export const menuItem = [
     description:"Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil. Toppings of tomato, veggies, beans, cured pork, or cheese are examples of variations. In Italy, a brustolina grill is frequently used to create bruschetta.",
     price:7.99,
     category:"appetizers",
-    img: "../asset/warm-bruschetta-1.jpg"
+    img: Brushetta
     },
     {
     id:3,
@@ -21,7 +56,7 @@ export const menuItem = [
     description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit quos debitis tempore ullam quae corrupti ipsum, eveniet esse ipsa magnam. ",
     price:7.99,
     category:"entrees",
-    img: "../asset/warm-bruschetta-1.jpg"
+    img: GrillFish
     },
     {
     index: 4,
@@ -29,7 +64,7 @@ export const menuItem = [
     description: "A trio of traditional, beetroot, and avocado hummus served with pita bread.",
     price: 8.99,
     category: "appetizers",
-    img:""
+    img: ModernHummusTrio
     },
     {
     index: 5,
@@ -37,7 +72,7 @@ export const menuItem = [
     description: "Smoky roasted eggplant dip with a drizzle of pomegranate molasses.",
     price: 7.99,
     category: "appetizers",
-    img:""
+    img: BabaGanoush
     },
     {
     index: 6,
@@ -45,7 +80,7 @@ export const menuItem = [
     description: "Grape leaves stuffed with quinoa, herbs, and spices, served with tzatziki sauce.",
     price: 9.49,
     category: "appetizers",
-    img:""
+    img: StuffedGrapeLeaves
     },
     {
     index: 7,
@@ -53,7 +88,7 @@ export const menuItem = [
     description: "Crispy falafel served with a tahini dipping sauce.",
     price: 6.99,
     category: "appetizers",
-    img:""
+    img: image07
     },
     {
     index: 8,
@@ -61,7 +96,7 @@ export const menuItem = [
     description: "Grilled chicken breast seasoned with zaatar, served with a side of roasted vegetables and lemon tahini sauce.",
     price: 13.99,
     category: "entrees",
-    img:""
+    img: image08
     },
     {
     index: 9,
@@ -69,7 +104,7 @@ export const menuItem = [
     description: "Quinoa salad with roasted vegetables, chickpeas, feta, and a lemon herb vinaigrette.",
     price: 12.49,
     category: "salads",
-    img:""
+    img: image09
     },
   {
     index: 10,
@@ -77,7 +112,7 @@ export const menuItem = [
     description: "Marinated chicken shawarma with lettuce, tomatoes, pickles, and garlic sauce, wrapped in a warm pita.",
     price: 11.99,
     category: "sandwiches",
-    img:""
+    img: image10
   },
   {
     index: 11,
@@ -85,14 +120,14 @@ export const menuItem = [
     description: "Sliced lamb with tzatziki, onions, tomatoes, and cucumbers, served in a pita.",
     price: 12.99,
     category: "sandwiches",
-    img:""
+    img: image11
   },
   {
     index: 12,
     name: "Grilled Veggie Wrap",
     price: 9.99,
     category: "sandwiches",
-    img:""
+    img: image12
   },
   {
     index: 13,
@@ -100,7 +135,7 @@ export const menuItem = [
     description: "Traditional Greek spinach and feta cheese pie wrapped in crispy phyllo dough.",
     price: 8.49,
     category: "appetizers",
-    img:""
+    img: image13
   },
   {
     index: 14,
@@ -108,7 +143,7 @@ export const menuItem = [
     description: "Grilled lamb meatballs with a spicy harissa yogurt sauce.",
     price: 14.99,
     category: "entrees",
-    img:""
+    img: image14
   },
   {
     index: 15,
@@ -116,7 +151,7 @@ export const menuItem = [
     description: "A modern take on traditional paella with saffron rice, shrimp, mussels, and calamari.",
     price: 18.99,
     category: "entrees",
-    img:""
+    img: image15
   },
   {
     index: 16,
@@ -124,7 +159,7 @@ export const menuItem = [
     description: "Layers of eggplant, ground beef, and béchamel sauce baked to perfection.",
     price: 16.49,
     category: "entrees",
-    img:""
+    img: image16
   },
   {
     index: 17,
@@ -132,7 +167,7 @@ export const menuItem = [
     description: "A vegetarian version of the classic dish with lentils and vegetables.",
     price: 15.49,
     category: "entrees",
-    img:""
+    img: image17
   },
   {
     index: 18,
@@ -140,7 +175,7 @@ export const menuItem = [
     description: "Tender octopus grilled and served with a lemon herb vinaigrette.",
     price: 19.99,
     category: "entrees",
-    img:""
+    img: image18
   },
   {
     index: 19,
@@ -148,7 +183,7 @@ export const menuItem = [
     description: "Poached eggs in a spicy tomato and bell pepper sauce, served with crusty bread.",
     price: 13.99,
     category: "entrees",
-    img:""
+    img: image19
   },
   {
     index: 20,
@@ -156,7 +191,7 @@ export const menuItem = [
     description: "Grilled chicken skewers with a side of tzatziki, served with rice and salad.",
     price: 14.99,
     category: "entrees",
-    img:""
+    img: image20
   },
   {
     index: 21,
@@ -164,7 +199,7 @@ export const menuItem = [
     description: "Marinated beef skewers with a side of garlic sauce, served with couscous.",
     price: 17.49,
     category: "entrees",
-    img:""
+    img: image21
   },
   {
     index: 22,
@@ -172,7 +207,7 @@ export const menuItem = [
     description: "Layers of phyllo dough, nuts, and honey syrup, served with a modern twist of cardamom.",
     price: 6.99,
     category: "desserts",
-    img:""
+    img: image22
   },
   {
     index: 23,
@@ -180,7 +215,7 @@ export const menuItem = [
     description: "Sweet cheese pastry soaked in orange blossom syrup and topped with crushed pistachios.",
     price: 7.49,
     category: "desserts",
-    img:""
+    img: image23
   },
   {
     index: 24,
@@ -188,7 +223,7 @@ export const menuItem = [
     description: "Assorted flavors of traditional Turkish delight.",
     price: 5.99,
     category: "desserts",
-    img:""
+    img: image24
   },
   {
     index: 25,
@@ -196,7 +231,7 @@ export const menuItem = [
     description: "Creamy Greek yogurt drizzled with honey and topped with crunchy walnuts.",
     price: 5.49,
     category: "desserts",
-    img:""
+    img: image25
   },
   {
     index: 26,
@@ -204,7 +239,7 @@ export const menuItem = [
     description: "Refreshing lemonade infused with fresh mint leaves.",
     price: 3.99,
     category: "beverages",
-    img:""
+    img: image26
   },
   {
     index: 27,
@@ -212,7 +247,7 @@ export const menuItem = [
     description: "Strong and aromatic Turkish coffee, served with a piece of Turkish delight.",
     price: 4.49,
     category: "beverages",
-    img:""
+    img: image27
   },
   {
     index: 28,
@@ -220,7 +255,7 @@ export const menuItem = [
     description: "Traditional Moroccan green tea with fresh mint leaves.",
     price: 3.49,
     category: "beverages",
-    img:""
+    img: image28
   },
   {
     index: 29,
@@ -228,7 +263,7 @@ export const menuItem = [
     description: "Iced tea with a splash of pomegranate juice.",
     price: 3.99,
     category: "beverages",
-    img:""
+    img: image29
   },
   {
     index: 30,
@@ -236,7 +271,7 @@ export const menuItem = [
     description: "Slices of grilled halloumi cheese served with a side of honey and almonds.",
     price: 9.99,
     category: "appetizers",
-    img:""
+    img: image30
   },
   {
     index: 31,
@@ -244,7 +279,7 @@ export const menuItem = [
     description: "A selection of hummus, baba ganoush, falafel, tabbouleh, and pita bread.",
     price: 15.99,
     category: "platters",
-    img:""
+    img: image31
   },
   {
     index: 32,
@@ -252,7 +287,7 @@ export const menuItem = [
     description: "Shrimp cooked in a tomato and feta cheese sauce, served with crusty bread.",
     price: 14.99,
     category: "appetizers",
-    img:""
+    img: image32
   },
   {
     index: 33,
@@ -260,7 +295,7 @@ export const menuItem = [
     description: "A rich and creamy dip made from roasted red peppers and walnuts, served with pita chips.",
     price: 7.49,
     category: "appetizers",
-    img:""
+    img: image33
   }
 ]
 
