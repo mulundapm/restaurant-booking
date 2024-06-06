@@ -24,13 +24,26 @@ function OrderDelivery(){
         setfilteredItems(menuItem.filter((item) => (item.category === category)))
     }
 
-    //When appetizer is clicked, show menuitem that has "appetizer" as category
-    //Use filter to return the item
+    const [uniqueCategories, setuniqueCategories] = useState([])
+
+    setuniqueCategories(menuItem.map(item =>{
+        if (uniqueCategories.indexOf(item.category) === -1){
+            uniqueCategories.push(item.category)
+        }
+    }))
+
+ console.log(uniqueCategories)
+
+    const dsiplayCategories = (categories) => categories.map(category =>
+        <button className="pill secondaryButton" id={category} onClick={()=> showCategorisedItems(category)}>{category}</button>
+    )
+
     return(
         <>
             <div className="ordering">
                 <h3>Order for delivery!</h3>
                 <div className="pill-container">
+                    {/* {dsiplayCategories(uniqueCategories)} */}
                     <button className="pill secondaryButton" id='all' onClick={()=> showCategorisedItems('all')}>All</button>
                     <button className="pill secondaryButton" id='appetizers' onClick={()=> showCategorisedItems('appetizers')}>Appetizers</button>
                     <button className="pill secondaryButton" id='platters' onClick={()=> showCategorisedItems('platters')}>Platters</button>
