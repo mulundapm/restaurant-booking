@@ -1,6 +1,7 @@
 *{
     padding: 0;
     margin: 0;
+    overflow-y: hidden;
 }
 
 .hero{
@@ -104,6 +105,7 @@ em{
 
 .pill-container{
     overflow: scroll;
+    overflow-y: hidden;
     white-space: nowrap;
     padding: 10px 0px 10px 0px;
 }

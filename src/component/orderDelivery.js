@@ -1,9 +1,10 @@
 import './heroSection.css'
 import { menuItem } from './manuItem'
-import React ,  { useState } from 'react'
+import React ,  { useEffect, useState } from 'react'
 
 function OrderDelivery(){
     const [filteredItems, setfilteredItems] = useState(menuItem)
+    const [uniqueCategories, setuniqueCategories] = useState([])
 
     const displayItem = (items) => items.map(item =>
         <article className='dish' id={item.id}>
@@ -24,18 +25,13 @@ function OrderDelivery(){
         setfilteredItems(menuItem.filter((item) => (item.category === category)))
     }
 
-    const [uniqueCategories, setuniqueCategories] = useState([])
-
-    setuniqueCategories(menuItem.map(item =>{
-        if (uniqueCategories.indexOf(item.category) === -1){
-            uniqueCategories.push(item.category)
-        }
-    }))
-
- console.log(uniqueCategories)
+    useEffect(() => {
+        const categories = ['all', ...new Set(menuItem.map(item => item.category))];
+        setuniqueCategories(categories);
+    }, []);
 
     const dsiplayCategories = (categories) => categories.map(category =>
-        <button className="pill secondaryButton" id={category} onClick={()=> showCategorisedItems(category)}>{category}</button>
+        <button className="pill secondaryButton" id={category} onClick={()=> showCategorisedItems(category)}>{category.charAt(0).toUpperCase() + category.slice(1)}</button>
     )
 
     return(
@@ -43,15 +39,7 @@ function OrderDelivery(){
             <div className="ordering">
                 <h3>Order for delivery!</h3>
                 <div className="pill-container">
-                    {/* {dsiplayCategories(uniqueCategories)} */}
-                    <button className="pill secondaryButton" id='all' onClick={()=> showCategorisedItems('all')}>All</button>
-                    <button className="pill secondaryButton" id='appetizers' onClick={()=> showCategorisedItems('appetizers')}>Appetizers</button>
-                    <button className="pill secondaryButton" id='platters' onClick={()=> showCategorisedItems('platters')}>Platters</button>
-                    <button className="pill secondaryButton" id='entrees' onClick={()=> showCategorisedItems('entrees')}>Entrees</button>
-                    <button className="pill secondaryButton" id='salads' onClick={()=> showCategorisedItems('salads')}>Salads</button>
-                    <button className="pill secondaryButton" id='sandwiches' onClick={()=> showCategorisedItems('sandwiches')}>Sandwiches</button>
-                    <button className="pill secondaryButton" id='desserts' onClick={()=> showCategorisedItems('desserts')}>Desserts</button>
-                    <button className="pill secondaryButton" id='beverages' onClick={()=> showCategorisedItems('beverages')}>Beverages</button>
+                    {dsiplayCategories(uniqueCategories)}
                 </div>
                 <hr className="solid" />
                 {displayItem(filteredItems)}
