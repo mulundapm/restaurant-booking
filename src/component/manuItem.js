@@ -125,6 +125,7 @@ export const menuItem = [
   {
     index: 12,
     name: "Grilled Veggie Wrap",
+    description: "A medley of grilled vegetables including zucchini, bell peppers, eggplant, and onions, layered with creamy hummus and fresh spinach, wrapped in a warm whole wheat tortilla.",
     price: 9.99,
     category: "sandwiches",
     img: image12

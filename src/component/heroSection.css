@@ -1,7 +1,6 @@
 *{
     padding: 0;
     margin: 0;
-    overflow-y: hidden;
 }
 
 .hero{
@@ -87,6 +86,11 @@ em{
     margin-bottom: 20px;
 }
 
+.primaryButton:hover{
+    background-color: #EDEFEE;
+    color: #495E57;;
+}
+
 .secondaryButton{
     background-color: #EDEFEE;
     color: #495E57;
@@ -114,7 +118,7 @@ em{
     display: inline-block;
 }
 
-.pill:hover{
+.pill:hover , .pill.selected{
     background-color: #495E57;
     color: #EDEFEE;
 }
@@ -234,4 +238,21 @@ form{
 .row > p{
     padding-top: 15px;
     padding-bottom: 15px;
+}
+
+.popup-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.text-container {
+    background-color: #EDEFEE;
+    left: 50%
 }
