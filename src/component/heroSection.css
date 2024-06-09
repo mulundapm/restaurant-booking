@@ -103,6 +103,11 @@ em{
     margin: 0px 10px 10px 0px;
 }
 
+.secondaryButton:hover{
+    background-color: #495E57;
+    color: #EDEFEE;
+}
+
 .ordering{
     padding: 20px 15px 0px 15px;
 }
@@ -128,7 +133,7 @@ hr{
     opacity: 0.25;
 }
 
-p{
+.text-info > p{
     color: #495E57;
     font-size: 1em;
     font-family: "Karla", sans-serif;
@@ -240,7 +245,39 @@ form{
     padding-bottom: 15px;
 }
 
-.popup-menu {
+.itemQuantity {
+    padding: 20px;
+    margin:auto;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+}
+
+.itemQuantity > .price{
+    font-size: 1.5em;
+    margin-right: 80px;
+}
+.itemQuantity > h6{
+    margin: 10px;
+    font-size: 2em;
+}
+
+.itemQuantity > button{
+    border: none;
+    background-color: #ffffff;
+    color: #495E57
+}
+
+.itemQuantity > button:disabled{
+    color: #EDEFEE;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  .popup-menu {
     position: fixed;
     top: 0;
     left: 0;
@@ -252,7 +289,47 @@ form{
     z-index: 1000;
 }
 
-.text-container {
-    background-color: #EDEFEE;
-    left: 50%
+.popup-menu.text-container {
+    background-color: #ffffff;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    align-items: center;
 }
+
+.popup-menu > img{
+    align-items: center;
+    object-fit: cover;
+    width: 300px;
+    height: 300px;
+    border-radius: 50px;
+}
+
+  .popup-menu > p{
+    color: #495E57;
+    font-size: 1em;
+    font-family: "Karla", sans-serif;
+}
+
+.popup-menu > textarea{
+    background-color: #ffffff;
+    padding: 10px;
+    margin: 10px;
+    width: 90%;
+    border-color: #495E57;
+    border: 1px solid;
+    border-radius: 16px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.closeButton{
+    display: block;
+    margin-left: auto;
+}
+
