@@ -1,18 +1,13 @@
 import './heroSection.css'
 import { menuItem } from './manuItem'
 import React ,  { useEffect, useState } from 'react'
-import { CiCirclePlus } from "react-icons/ci";
-import { CiCircleMinus } from "react-icons/ci";
-import { IconContext } from "react-icons";
-import { IoMdClose } from "react-icons/io";
-import { basketContext } from '../context/basket';
+import usePopUpMenu from './popUpMenu';
 
 function OrderDelivery(){
     const [filteredItems, setfilteredItems] = useState(menuItem)
     const [uniqueCategories, setuniqueCategories] = useState([])
     const [focus, setFocus] = useState("all")
     const [selectedItem, setSelectedItem] = useState(null)
-    let [itemQuantity, setItemQuanity] =useState(1)
 
     const displayItem = (items) => items.map(item =>
         <article className='dish' id={item.id} onClick={() => itemClicked(item)}>
@@ -48,44 +43,7 @@ function OrderDelivery(){
     }
 
     const itemClicked = (item) =>{
-        setSelectedItem(item)
-    }
-
-    const editQuantity = (e) =>{
-        if (e.currentTarget.classList.contains('plus')){
-            setItemQuanity(itemQuantity += 1) ;
-        }else
-        setItemQuanity(itemQuantity -= 1)
-    }
-
-
-    const displayPopUpMenu = (item) => {
-        if(selectedItem) {
-        return(
-        <div className="popup-menu">
-            <div className="popup-menu text-container">
-                <button className="closeButton secondaryButton" onClick={closePopUpMenu}><IoMdClose />Close</button>
-                <img src={item.img} alt={item.name} className='image center' width={50}/>
-                <h1 className='name green'>{item.name}</h1>
-                <p className='description'>{item.description} </p>
-                <div className="itemQuantity">
-                    <IconContext.Provider value={{ className: "global-class-name", size: "3em"  }}>
-                        <p className='price'>${item.price}</p>
-                        <button className="minus" onClick={editQuantity} disabled={itemQuantity <= 1}><CiCircleMinus /></button>
-                        <h6 className="quantity">{itemQuantity}</h6>
-                        <button className="plus" onClick={editQuantity}><CiCirclePlus /></button>
-                    </IconContext.Provider>
-                </div>
-                <label htmlFor="remarks">Remarks</label><br />
-                <textarea type="textarea" name="remarks" id='remarks'/>
-                <button className='primaryButton center' >Add to basket</button>
-            </div>
-    </div>)
-        }return null
-    }
-
-    const closePopUpMenu = () => {
-        setSelectedItem(null)
+        setSelectedItem(item);
     }
 
     return(
@@ -97,7 +55,7 @@ function OrderDelivery(){
                 </div>
                 <hr className="solid" />
                 {displayItem(filteredItems)}
-                {displayPopUpMenu(selectedItem)}
+                {usePopUpMenu({ selectedItem, setSelectedItem })}
             </div>
         </>
     )
