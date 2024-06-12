@@ -16,12 +16,39 @@ function usePopUpMenu({selectedItem, setSelectedItem}){
     })
 
     const addToCart = (item) =>{
-        const newCartItem = {name: (item.name), quantity: (itemQuantity), remarks: cartItem.remarks}
+        const newCartItem = {name: (item.name), quantity: itemQuantity, remarks: cartItem.remarks}
         setCartItem(newCartItem)
-        setCart(prevCart => [...prevCart, newCartItem])
-        console.log([...cart, newCartItem])
-    }
+        setCart(prevCart => {
+            const index = cart.map(e => e.name).indexOf(item.name);
+            if (index !== -1) {
+              const updatedCart = [...prevCart];
+              updatedCart[index] = newCartItem;
+              console.log(updatedCart);
+              return updatedCart;
+            } else {
+              const updatedCart = [...prevCart, newCartItem];
+              console.log(updatedCart);
+              return updatedCart;
+            }
+          });
+        }
 
+
+        // const index = cart.map(e => e.name).indexOf(item.name)
+        // setCart(prevCart =>{
+        //     const cartToUpdate = [...prevCart]
+        //     if (index !== -1){
+        //         cartToUpdate[index] = newCartItem;
+        //         console.log(cartToUpdate)
+        //         return cartToUpdate;
+        //     }else 
+        //     console.log([cartToUpdate, newCartItem])
+        //     return [cartToUpdate, newCartItem]
+        // })
+
+    // (cart.some(e => e.name === item.name)){
+    //     console.log("test")
+    // }
     const closePopUpMenu = () => {
         setSelectedItem(null)
         setItemQuanity(1);
@@ -51,7 +78,7 @@ function usePopUpMenu({selectedItem, setSelectedItem}){
                 <IconContext.Provider value={{ className: "global-class-name", size: "3em"  }}>
                     <p className='price'>${selectedItem.price}</p>
                     <button className="minus" onClick={editQuantity} disabled={itemQuantity <= 1}><CiCircleMinus /></button>
-                    <h6 className="quantity">{itemQuantity}</h6>
+                    <h6 className="quantity" >{itemQuantity}</h6>
                     <button className="plus" onClick={editQuantity}><CiCirclePlus /></button>
                 </IconContext.Provider>
             </div>
