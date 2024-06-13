@@ -91,6 +91,11 @@ em{
     color: #495E57;;
 }
 
+.primaryButton:active{
+    background-color: #495E57;
+    color: #EDEFEE;
+}
+
 .secondaryButton{
     background-color: #EDEFEE;
     color: #495E57;
