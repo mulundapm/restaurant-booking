@@ -29,7 +29,10 @@
     margin-right: auto;
     padding: 20px;
     z-index: 1000;
-    visibility: hidden;
+}
+
+Link > h5:hover{
+    color: red;
 }
 
 .closeButton{

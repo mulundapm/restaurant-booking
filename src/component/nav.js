@@ -4,19 +4,17 @@ import { BsCartPlus } from "react-icons/bs";
 import './nav.css'
 import { Link } from "react-router-dom";
 import { IoMdClose } from "react-icons/io";
+import { useState } from "react";
 
 function Nav(){
-    const closePopUpMenu = () => {
-        
-    }
 
-    const showPopUpMenu = () => {
-        console.log()
-    }
+
+    const [showHamburger, setShowHamburger] = useState(false)
+
     return(
         <>
         <div className="nav">
-            <GiHamburgerMenu className="react-icons hamburger nav-item" size={40} onClick={showPopUpMenu}/>
+            <GiHamburgerMenu className="react-icons hamburger nav-item" size={40}  onClick={() =>setShowHamburger(!showHamburger)}/>
             <Link to="/"><img
                 className="nav-item"
                 src={mainLogo}
@@ -24,14 +22,24 @@ function Nav(){
                 width={150}
             /></Link>
             <BsCartPlus className="react-icons cart nav-item" size={40}/>
-            <div className="hamburgerMenu">
-            <button className="closeButton secondaryButton" onClick={closePopUpMenu}><IoMdClose />Close</button>
+            <div className="hamburgerMenu" style={{visibility: showHamburger? "visible": "hidden" }} >
+            <button className="closeButton secondaryButton"  onClick={() =>setShowHamburger(!showHamburger)}><IoMdClose />Close</button>
                 <img src={mainLogo} alt="Logo" width={150}/>
-                <h5>Order</h5>
-                <h5>Reservation</h5>
-                <h5>Reviews</h5>
-                <h5>About</h5>
-                <h5>Contact Us</h5>
+                <Link to="/ordering">
+                    <h5>Order</h5>
+                </Link>
+                <Link to="/booking">
+                    <h5>Reservation</h5>
+                </Link>
+                <Link to="/review">
+                    <h5>Reviews</h5>
+                </Link>
+                <Link to="/about">
+                    <h5>About</h5>
+                </Link>
+                <Link to="/contact">
+                    <h5>Contact Us</h5>
+                </Link>
             </div>
         </div>
         </>
