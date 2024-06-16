@@ -76,7 +76,7 @@ function usePopUpMenu({selectedItem, setSelectedItem}){
             <p className='description'>{selectedItem.description} </p>
             <div className="itemQuantity">
                 <IconContext.Provider value={{ className: "global-class-name", size: "3em"  }}>
-                    <p className='price'>${selectedItem.price}</p>
+                    <p className='price'>${Math.round(selectedItem.price*itemQuantity*100)/100}</p>
                     <button className="minus" onClick={editQuantity} disabled={itemQuantity <= 1}><CiCircleMinus /></button>
                     <h6 className="quantity" >{itemQuantity}</h6>
                     <button className="plus" onClick={editQuantity}><CiCirclePlus /></button>

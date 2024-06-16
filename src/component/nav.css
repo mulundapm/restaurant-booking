@@ -31,8 +31,9 @@
     z-index: 1000;
 }
 
-Link > h5:hover{
-    color: red;
+a > h5:hover{
+    color: #495E57;
+    cursor: pointer;
 }
 
 .closeButton{
