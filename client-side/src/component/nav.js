@@ -21,7 +21,7 @@ function Nav(){
                 alt="navigation logo"
                 width={150}
             /></Link>
-            <BsCartPlus className="react-icons cart nav-item" size={40}/>
+            <Link to="/cart"><BsCartPlus className="react-icons cart nav-item" size={40}/></Link>
             <div className="hamburgerMenu" style={{visibility: showHamburger? "visible": "hidden" }} >
                 <button className="closeButton secondaryButton"  onClick={() =>setShowHamburger(!showHamburger)}><IoMdClose />Close</button>
                 <img src={mainLogo} alt="Logo" width={150}/>

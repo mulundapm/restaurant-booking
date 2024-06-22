@@ -10,6 +10,7 @@ import OrderingPage from './pages/OrderingPage';
 import ReviewPage from './pages/ReviewPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import CartPage from './pages/CartPage';
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
               <Route path="/review" element={<ReviewPage />}/>
               <Route path="/about" element={<AboutPage />}/>
               <Route path="/contact" element={<ContactPage />}/>
+              <Route path="/cart" element={<CartPage />}/>
             </Routes>
           </InputProvider>
         </CartProvider>
