@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const schemas = require('../model/schemas')
+const cloudinary = require('cloudinary').v2
 
 router.get('/menuitems', async (req,res) =>{
     const menuItem = schemas.MenuItem
@@ -11,5 +12,6 @@ router.get('/menuitems', async (req,res) =>{
     } else
     {res.send(menuItemsData)}
 })
+
 
 module.exports = router

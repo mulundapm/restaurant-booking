@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const router = require('./routes/router')
 const mongoose = require('mongoose')
 require('dotenv/config')
+const cloudinary = require('cloudinary').v2;
 
 const app = express()
 
@@ -37,7 +38,18 @@ const server = app.listen(port, () => {
     console.log(`Server is running on port ${port}`)
 })
 
+// Require the cloudinary library
 
+// Return "https" URLs by setting secure: true
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_NAME,
+    api_key: process.env.CLOUDINARY_KEY,
+    api_secret: process.env.CLOUDINARY_SECRET,
+    secure: true
+});
+
+cloudinary.uploader.upload
+// Log the configuration
 
 // MongoClient.connect(process.env.MONGODB_URL, {
 //     useNewUrlParser: true,

@@ -2,8 +2,11 @@ import './heroSection.css'
 import React ,  { useEffect, useState } from 'react'
 import usePopUpMenu from './popUpMenu';
 import axios from "axios"
+import {AdvancedImage} from '@cloudinary/react';
+import {Cloudinary} from "@cloudinary/url-gen";
 
 function OrderDelivery(){
+    
     const [filteredItems, setfilteredItems] = useState([])
     const [uniqueCategories, setuniqueCategories] = useState([])
     const [focus, setFocus] = useState("all")
